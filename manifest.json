@@ -1,0 +1,21 @@
+{
+  "name": "Uke Pin-Up: Acordes y Canciones",
+  "short_name": "UkePinUp",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#50B2C0",
+  "theme_color": "#50B2C0",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "aloha-girl.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "aloha-girl.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
