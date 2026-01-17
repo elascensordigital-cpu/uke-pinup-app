@@ -1,23 +1,11 @@
 {
-  "name": "Uke Pin-Up: Acordes y Canciones",
-  "short_name": "UkePinUp",
-  "description": "Aprende acordes y canciones de ukelele con estilo Pin-Up y Hawaiano.",
-  "lang": "es",
-  "start_url": "./index.html",
+  "background_color": "#50b2c0",
+  "dir": "ltr",
   "display": "standalone",
-  "background_color": "#50B2C0",
-  "theme_color": "#50B2C0",
-  "orientation": "portrait",
-  "icons": [
-    {
-      "src": "aloha-girl.png",
-      "sizes": "192x192",
-      "type": "image/png"
-    },
-    {
-      "src": "aloha-girl.png",
-      "sizes": "512x512",
-      "type": "image/png"
-    }
-  ]
+  "name": "elascensordigital-cpu.github",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "elascensordigital-cpu.github",
+  "start_url": "/",
+  "theme_color": "#ffffff"
 }
