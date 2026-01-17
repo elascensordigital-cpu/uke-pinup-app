@@ -1,0 +1,209 @@
+:root {
+    --bg-teal: #50B2C0;
+    --dot-color: #65C2CF;
+    --card-cream: #FFFDF5;
+    --accent-coral: #FF6F61;
+    --text-dark: #2D2D2D;
+    --fret-wood: #8D6E63;
+    
+    /* Colores Dificultad */
+    --diff-easy: #81C784;
+    --diff-med: #FFD54F;
+    --diff-hard: #FF8A65;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: var(--bg-teal);
+    background-image: radial-gradient(var(--dot-color) 20%, transparent 20%);
+    background-size: 20px 20px;
+    color: var(--text-dark);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+}
+
+/* HEADER CON IMAGEN */
+header {
+    margin-top: 1rem;
+    color: #fff;
+    text-shadow: 2px 2px 0px rgba(0,0,0,0.2);
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    width: 100%;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.header-pinup {
+    width: 100px; /* <--- AJUSTA EL TAMAÑO DE LA CHICA AQUÍ */
+    height: auto;
+    transform: rotate(-5deg);
+    filter: drop-shadow(3px 3px 0px rgba(0,0,0,0.2));
+    transition: transform 0.3s ease;
+}
+
+.header-pinup:hover { transform: rotate(0deg) scale(1.05); }
+
+.header-text { text-align: left; }
+
+header h1 {
+    font-family: 'Pacifico', cursive;
+    font-size: 3.5rem;
+    margin: 0;
+    line-height: 1.1;
+}
+
+header p { margin: 5px 0 0 0; font-size: 1.1rem; opacity: 0.9; }
+
+/* MENÚ TABS */
+.main-menu { display: flex; gap: 20px; margin-top: 20px; }
+
+.menu-tab {
+    background: rgba(255,255,255,0.3);
+    border: 2px solid white;
+    padding: 10px 30px;
+    border-radius: 30px;
+    font-family: 'Pacifico', cursive;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.menu-tab.active, .menu-tab:hover {
+    background: var(--card-cream);
+    color: var(--accent-coral);
+    transform: scale(1.05);
+}
+
+/* ACORDES */
+#root-nav {
+    display: flex; gap: 10px; flex-wrap: wrap;
+    justify-content: center; padding: 1.5rem; max-width: 800px;
+}
+
+.nav-btn {
+    background: var(--card-cream);
+    border: 2px solid var(--accent-coral);
+    border-radius: 50%;
+    width: 45px; height: 45px;
+    font-family: 'Pacifico', cursive; font-size: 1.1rem;
+    color: var(--accent-coral); cursor: pointer;
+    transition: transform 0.2s;
+}
+.nav-btn:hover, .nav-btn.active {
+    background: var(--accent-coral); color: white;
+    transform: scale(1.1) rotate(-10deg);
+}
+
+#chord-container {
+    display: flex; flex-wrap: wrap; gap: 20px;
+    justify-content: center; padding: 20px; max-width: 1000px;
+}
+
+.chord-card {
+    background: var(--card-cream); border-radius: 20px;
+    padding: 15px; width: 160px; text-align: center;
+    box-shadow: 6px 6px 0px rgba(0,0,0,0.1);
+    border: 2px solid #eee; transition: transform 0.2s;
+}
+.chord-card:hover { transform: translateY(-5px); }
+
+.chord-name {
+    font-family: 'Pacifico', cursive; font-size: 1.8rem;
+    margin-bottom: 10px; color: var(--text-dark);
+}
+
+/* FRETBOARD */
+.fretboard {
+    display: grid; grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 10px repeat(4, 25px);
+    width: 100px; margin: 0 auto; position: relative;
+    border-bottom: 4px solid var(--fret-wood);
+}
+.nut { grid-column: 1 / span 4; background: #333; height: 6px; border-radius: 4px; }
+.string { border-right: 2px solid var(--fret-wood); position: relative; }
+.string:last-child { border-right: none; }
+.fret-line { position: absolute; width: 100%; height: 1px; background: #ccc; top: 100%; }
+.dot {
+    width: 14px; height: 14px; background: var(--accent-coral);
+    border-radius: 50%; position: absolute; left: 50%; transform: translateX(-50%);
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.3); z-index: 10;
+}
+.status-indicator { position: absolute; top: -15px; left: 50%; transform: translateX(-50%); font-weight: bold; font-size: 12px; color: #555; }
+
+/* CANCIONES */
+#song-list-container {
+    display: flex; flex-direction: column; gap: 15px;
+    width: 90vw; max-width: 600px; margin-top: 20px; padding-bottom: 50px;
+}
+
+.difficulty-title {
+    color: white; font-family: 'Pacifico', cursive;
+    font-size: 1.8rem; margin: 20px 0 5px 10px;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.2);
+}
+
+.song-item {
+    background: var(--card-cream); padding: 15px 20px;
+    border-radius: 15px; display: flex; justify-content: space-between;
+    align-items: center; cursor: pointer;
+    box-shadow: 4px 4px 0 rgba(0,0,0,0.1); transition: transform 0.2s;
+}
+.song-item:hover { transform: scale(1.02); }
+
+.song-info h3 { margin: 0; font-size: 1.2rem; }
+.song-info p { margin: 3px 0 0 0; font-size: 0.9rem; color: #777; font-style: italic; }
+
+.badge {
+    padding: 5px 12px; border-radius: 20px; font-size: 0.75rem;
+    font-weight: bold; color: #fff; text-transform: uppercase;
+}
+
+/* MODAL */
+.modal {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5); display: flex;
+    justify-content: center; align-items: center; z-index: 1000;
+    backdrop-filter: blur(3px);
+}
+.hidden { display: none !important; }
+
+.modal-content {
+    background: #fff; width: 90%; max-width: 500px; max-height: 80vh;
+    padding: 40px; border-radius: 5px; position: relative; overflow-y: auto;
+    background-image: linear-gradient(#eee 1px, transparent 1px);
+    background-size: 100% 1.8rem; line-height: 1.8rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.close-btn {
+    position: absolute; top: 10px; right: 20px;
+    font-size: 2.5rem; cursor: pointer; color: var(--accent-coral);
+}
+#modal-title { font-family: 'Pacifico', cursive; color: var(--accent-coral); margin-bottom: 0; font-size: 2rem; }
+#modal-artist { margin-top: 0; font-style: italic; color: #666; margin-bottom: 20px; }
+.song-body { font-family: 'Courier Prime', monospace; font-size: 1rem; color: #333; white-space: pre-wrap; }
+.song-body b { color: var(--accent-coral); font-weight: bold; }
+
+footer {
+    margin-top: auto; padding: 3rem; color: white;
+    font-family: 'Pacifico', cursive; text-align: center;
+    font-size: 2.5rem; letter-spacing: 1px;
+}
+
+/* Móvil */
+@media (max-width: 480px) {
+    .header-content { flex-direction: column; text-align: center; }
+    .header-text { text-align: center; }
+    .header-pinup { width: 100px; margin-bottom: 5px; }
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UkePinUp - Acordes & Canciones</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;700&family=Courier+Prime&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <img src="aloha-girl.png" alt="Chica Hawaiana" class="header-pinup">
+            <div class="header-text">
+                <h1>Uke Pin-Up</h1>
+                <p>🌊🍸Tu rincón tropical🌴​🌺​</p>
+            </div>
+        </div>
+    </header>
+
+    <div class="main-menu">
+        <button id="btn-chords" class="menu-tab active" onclick="switchTab('chords')">Acordes</button>
+        <button id="btn-songs" class="menu-tab" onclick="switchTab('songs')">Canciones</button>
+    </div>
+
+    <section id="view-chords">
+        <nav id="root-nav">
+            </nav>
+        <div id="chord-container">
+            <div class="empty-state">Cargando... 🌺</div>
+        </div>
+    </section>
+
+    <section id="view-songs" style="display: none;">
+        <div id="song-list-container">
+            </div>
+    </section>
+
+    <div id="song-modal" class="modal hidden">
+        <div class="modal-content paper-texture">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h2 id="modal-title">Título</h2>
+            <p id="modal-artist">Artista</p>
+            <div class="song-body" id="modal-body"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Hecho con 💖 y Aloha</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
